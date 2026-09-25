@@ -1,0 +1,399 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        padding: 20px;
+        line-height: 1.5;
+    }
+
+    .container {
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--border-dark);
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: var(--text-main);
+        text-transform: uppercase;
+    }
+
+    p.subtitle {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .tab-btn {
+        background-color: var(--gray-light);
+        color: var(--text-main);
+        border: 1px solid var(--border);
+        padding: 10px 18px;
+        border-radius: 6px 6px 0 0;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .tab-btn.active {
+        background-color: var(--accent-black);
+        color: white;
+        border-color: var(--accent-black);
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    .controls {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--card-bg);
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    select {
+        background-color: var(--card-bg);
+        color: var(--text-main);
+        border: 1px solid var(--border-dark);
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .phase-badge {
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        border: 1px solid var(--border-dark);
+        background-color: #27272a;
+        color: #ffffff;
+    }
+
+    .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .card h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--accent-black);
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    @media(max-width: 768px) {
+        .grid-2 { grid-template-columns: 1fr; }
+        header { flex-direction: column; align-items: flex-start; }
+        select { max-width: 100%; }
+    }
+
+    .section-title {
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .section-title span {
+        background-color: var(--accent-black);
+        color: white;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 3px;
+    }
+
+    ul {
+        margin: 0 0 18px 0;
+        padding-left: 18px;
+        color: #27272a;
+        font-size: 0.9rem;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    .info-box {
+        background-color: var(--gray-light);
+        border-left: 4px solid var(--accent-black);
+        padding: 12px 15px;
+        border-radius: 0 6px 6px 0;
+        font-size: 0.85rem;
+        color: var(--text-main);
+        margin-top: 15px;
+    }
+
+    .notes-area {
+        width: 100%;
+        height: 80px;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        color: var(--text-main);
+        border-radius: 6px;
+        padding: 10px;
+        box-sizing: border-box;
+        resize: vertical;
+        margin-top: 8px;
+        font-family: inherit;
+    }
+
+    .check-btn {
+        background-color: var(--card-bg);
+        color: var(--text-main);
+        border: 1px solid var(--border-dark);
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .check-btn.completed {
+        background-color: var(--accent-black);
+        color: white;
+    }
+
+    .footer-nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        background: var(--card-bg);
+        color: var(--text-main);
+        border: 1px solid var(--border-dark);
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+        background: var(--accent-black);
+        color: white;
+    }
+</style>
+
+
+<!-- ABAS -->
+<div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('mapa')">📅 Treino Completo da Terça (60 min)</button>
+    <button class="tab-btn" onclick="switchTab('aquecimento')">🏐 Aquecimento Lúdico & Coordenativo</button>
+    <button class="tab-btn" onclick="switchTab('fundamentos')">🎯 Guia de Elementos Técnicos de Base</button>
+</div>
+
+<!-- ABA 1: MAPA SEMANAL (TERÇA-FEIRA) -->
+<div id="tab-mapa" class="tab-content active">
+    <div class="controls">
+        <label for="weekSelect"><strong>Selecionar Terça-feira:</strong></label>
+        <select id="weekSelect" onchange="renderWeek()"></select>
+        <span id="phaseBadge" class="phase-badge">Fase</span>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 id="weekTitle">Treino #1</h2>
+            <button id="checkBtn" class="check-btn" onclick="toggleCompleted()">
+                <span id="checkIcon">◯</span> <span id="checkText">Marcar Concluído</span>
+            </button>
+        </div>
+
+        <p style="margin-bottom: 18px; font-size: 0.95rem;"><strong>Foco Específico:</strong> <span id="weekFocus" style="color: var(--gray-dark); font-weight: 600;">-</span></p>
+
+        <div class="grid-2">
+            <div>
+                <div class="section-title"><span>12 MIN</span> Aquecimento Lúdico & Jogos de </div>
+                <ul id="prehabList"></ul>
+
+                <div class="section-title"><span>10 MIN</span> Coordenação, Equilíbrio & Saltos Básicos</div>
+                <ul id="plyoList"></ul>
+            </div>
+            <div>
+                <div class="section-title"><span>10 MIN</span> Agilidade, Jogos de Apanhada & Reflexos</div>
+                <ul id="speedList"></ul>
+
+                <div class="section-title"><span>13 MIN</span> Progressão Técnica sem Rede / Rede Baixa</div>
+                <ul id="strengthList"></ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <div class="section-title"><span>15 MIN</span> Jogo Aplicado (Minivôlei / 2x2 / 3x3)</div>
+            <ul id="ballList"></ul>
+        </div>
+
+        <div class="info-box">
+            <strong>💡 Gestão Pedagógica (60 min):</strong> Foco absoluto na diversão, no desenvolvimento do hábito de passar a bola de toque/manchete e na cooperação entre colegas. Sem cargas de peso ou pliometria agressiva.
+        </div>
+
+        <div style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+            <label for="notes"><strong>Anotações do Treinador:</strong></label>
+            <textarea id="notes" class="notes-area" placeholder="Anotar participação, dificuldades de passe ou evolução nos jogos..." oninput="saveNotes()"></textarea>
+        </div>
+    </div>
+
+    <div class="footer-nav">
+        <button class="nav-btn" onclick="changeWeek(-1)">← Terça Anterior</button>
+        <button class="nav-btn" onclick="changeWeek(1)">Próxima Terça →</button>
+    </div>
+</div>
+
+<!-- ABA 2: AQUECIMENTO LÚDICO (QUADRA) -->
+<div id="tab-aquecimento" class="tab-content">
+    <div class="card">
+        <h2 id="warmupTitle">🏐 Aquecimento Lúdico e Coordenativo da Semana</h2>
+        <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Duração total: 12 minutos. Utiliza brincadeiras de apanhada, deslocamentos variados e contacto leve com a bola (peso leve ou balão).</p>
+
+        <div class="grid-2">
+            <div>
+                <div class="section-title"><span>Passo 1</span> Jogos de Deslocamento e Apanhada (4 min)</div>
+                <ul id="warmupStep1"></ul>
+
+                <div class="section-title"><span>Passo 2</span> Mobilidade Articular em Brincadeira (4 min)</div>
+                <ul id="warmupStep2"></ul>
+            </div>
+            <div>
+                <div class="section-title"><span>Passo 3</span> Interação com Bola Leve / Balão (4 min)</div>
+                <ul id="warmupStep3"></ul>
+
+                <div class="info-box">
+                    <strong>📌 Nota do Treinador:</strong> Em Infantis B, o aquecimento deve ser dinâmico e parecer um jogo. Evite filas longas ou explicações teóricas demoradas.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ABA 3: GUIA TÉCNICO DE BASE -->
+<div id="tab-fundamentos" class="tab-content">
+    <div class="card">
+        <h2>🎯 Guia de Progressão Técnica (Infantis B)</h2>
+        <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Objetivos fundamentais para o escalão: aprender a dominar o toque de dedos, a manchete de controlo e o serviço por baixo.</p>
+
+        <div class="grid-2">
+            <div>
+                <div class="section-title"><span>1º Trimestre</span> Postura e Manchete de Base</div>
+                <ul>
+                    <li><strong>Posição Fundamental:</strong> Flexão de joelhos e tronco ligeiramente inclinado para a frente.</li>
+                    <li><strong>Manchete Estável:</strong> Unir braços sem dobrar cotovelos, usando o corpo todo para impulsionar a bola.</li>
+                    <li><strong>Jogo de Duplas (Catch-Ball):</strong> Apanhar a bola em cima e devolver com manchete controlada.</li>
+                    <li><strong>Autopasse:</strong> Dar toques para cima seguidos para ganhar sensibilidade ao toque.</li>
+                </ul>
+
+                <div class="section-title"><span>2º Trimestre</span> Toque de Dedos e Serviço por Baixo</div>
+                <ul>
+                    <li><strong>Forma dos Dedos:</strong> "Chapéu" na testa com indicador e polegar em triângulo.</li>
+                    <li><strong>Serviço por Baixo:</strong> Posição de passo, braço balança como um pêndulo e impacto limpo na base da bola.</li>
+                    <li><strong>Toque a Duplas:</strong> Trocar toques curtos com um colega a curta distância.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title"><span>3º Trimestre</span> Introdução ao Minivôlei (2x2 e 3x3)</div>
+                <ul>
+                    <li><strong>Regras Simplificadas:</strong> Permitir apanhar a bola e lançar na fase inicial, evoluindo progressivamente para o toque regulamentar.</li>
+                    <li><strong>Posicionamento em Quadra:</strong> Compreender a rotação simples e a ocupação do espaço defensivo.</li>
+                    <li><strong>Comunicação:</strong> Gritar "Minha!" para evitar choques entre colegas.</li>
+                </ul>
+
+                <div class="section-title"><span>Jogos e Desafios</span></div>
+                <ul>
+                    <li><strong>Desafio do Cesto:</strong> Tentar fazer 10 toques seguidos sem a bola cair ao chão.</li>
+                    <li><strong>Torneio Interno 2x2:</strong> Jogos curtos de 5 minutos para aplicar o que foi aprendido.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
