@@ -1,399 +1,745 @@
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Académicos - Sistema Anual de Treino (Infantis B)</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --card-bg: #ffffff;
+            --text-main: #111111;
+            --text-muted: #555555;
+            --border: #e0e0e0;
+            --border-dark: #111111;
+            --gray-light: #f4f4f5;
+            --gray-dark: #18181b;
+            --accent-black: #09090b;
+        }
 
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        padding: 20px;
-        line-height: 1.5;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-        max-width: 950px;
-        margin: 0 auto;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 20px;
+            line-height: 1.5;
+        }
 
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 2px solid var(--border-dark);
-        padding-bottom: 15px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
 
-    .header-left {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border-dark);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-    .logo {
-        height: 50px;
-        width: auto;
-        object-fit: contain;
-    }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    h1 {
-        font-size: 1.4rem;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        color: var(--text-main);
-        text-transform: uppercase;
-    }
+        .logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
 
-    p.subtitle {
-        color: var(--text-muted);
-        font-size: 0.85rem;
-        font-weight: 500;
-    }
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
 
-    .tabs {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid var(--border);
-        overflow-x: auto;
-        padding-bottom: 5px;
-    }
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
 
-    .tab-btn {
-        background-color: var(--gray-light);
-        color: var(--text-main);
-        border: 1px solid var(--border);
-        padding: 10px 18px;
-        border-radius: 6px 6px 0 0;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 0.85rem;
-        transition: all 0.2s ease;
-        white-space: nowrap;
-    }
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
 
-    .tab-btn.active {
-        background-color: var(--accent-black);
-        color: white;
-        border-color: var(--accent-black);
-    }
+        .tab-btn {
+            background-color: var(--gray-light);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 10px 18px;
+            border-radius: 6px 6px 0 0;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
 
-    .tab-content {
-        display: none;
-    }
+        .tab-btn.active {
+            background-color: var(--accent-black);
+            color: white;
+            border-color: var(--accent-black);
+        }
 
-    .tab-content.active {
-        display: block;
-    }
+        .tab-content {
+            display: none;
+        }
 
-    .controls {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background: var(--card-bg);
-        padding: 15px;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
+        .tab-content.active {
+            display: block;
+        }
 
-    select {
-        background-color: var(--card-bg);
-        color: var(--text-main);
-        border: 1px solid var(--border-dark);
-        padding: 10px 14px;
-        border-radius: 6px;
-        font-size: 0.95rem;
-        font-weight: 600;
-        cursor: pointer;
-        width: 100%;
-        max-width: 420px;
-    }
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
 
-    .phase-badge {
-        padding: 6px 14px;
-        border-radius: 4px;
-        font-weight: 700;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        border: 1px solid var(--border-dark);
-        background-color: #27272a;
-        color: #ffffff;
-    }
+        select {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-dark);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            max-width: 420px;
+        }
 
-    .card {
-        background-color: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 24px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
+        .phase-badge {
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border: 1px solid var(--border-dark);
+            background-color: #27272a;
+            color: #ffffff;
+        }
 
-    .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 12px;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
 
-    .card h2 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--accent-black);
-    }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-black);
+        }
 
-    @media(max-width: 768px) {
-        .grid-2 { grid-template-columns: 1fr; }
-        header { flex-direction: column; align-items: flex-start; }
-        select { max-width: 100%; }
-    }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-    .section-title {
-        font-weight: 700;
-        color: var(--text-main);
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
+        @media(max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            header { flex-direction: column; align-items: flex-start; }
+            select { max-width: 100%; }
+        }
 
-    .section-title span {
-        background-color: var(--accent-black);
-        color: white;
-        font-size: 0.7rem;
-        padding: 2px 6px;
-        border-radius: 3px;
-    }
+        .section-title {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-    ul {
-        margin: 0 0 18px 0;
-        padding-left: 18px;
-        color: #27272a;
-        font-size: 0.9rem;
-    }
+        .section-title span {
+            background-color: var(--accent-black);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
 
-    li {
-        margin-bottom: 8px;
-    }
+        ul {
+            margin: 0 0 18px 0;
+            padding-left: 18px;
+            color: #27272a;
+            font-size: 0.9rem;
+        }
 
-    .info-box {
-        background-color: var(--gray-light);
-        border-left: 4px solid var(--accent-black);
-        padding: 12px 15px;
-        border-radius: 0 6px 6px 0;
-        font-size: 0.85rem;
-        color: var(--text-main);
-        margin-top: 15px;
-    }
+        li {
+            margin-bottom: 8px;
+        }
 
-    .notes-area {
-        width: 100%;
-        height: 80px;
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        color: var(--text-main);
-        border-radius: 6px;
-        padding: 10px;
-        box-sizing: border-box;
-        resize: vertical;
-        margin-top: 8px;
-        font-family: inherit;
-    }
+        .info-box {
+            background-color: var(--gray-light);
+            border-left: 4px solid var(--accent-black);
+            padding: 12px 15px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin-top: 15px;
+        }
 
-    .check-btn {
-        background-color: var(--card-bg);
-        color: var(--text-main);
-        border: 1px solid var(--border-dark);
-        padding: 8px 16px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 0.85rem;
-        transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
+        .notes-area {
+            width: 100%;
+            height: 80px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            border-radius: 6px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: vertical;
+            margin-top: 8px;
+            font-family: inherit;
+        }
 
-    .check-btn.completed {
-        background-color: var(--accent-black);
-        color: white;
-    }
+        .check-btn {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-dark);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-    .footer-nav {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        gap: 10px;
-    }
+        .check-btn.completed {
+            background-color: var(--accent-black);
+            color: white;
+        }
 
-    .nav-btn {
-        background: var(--card-bg);
-        color: var(--text-main);
-        border: 1px solid var(--border-dark);
-        padding: 10px 18px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 0.85rem;
-        transition: all 0.2s ease;
-    }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 10px;
+        }
 
-    .nav-btn:hover {
-        background: var(--accent-black);
-        color: white;
-    }
-</style>
+        .nav-btn {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-dark);
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
 
+        .nav-btn:hover {
+            background: var(--accent-black);
+            color: white;
+        }
+    </style>
+</head>
+<body>
 
-<!-- ABAS -->
-<div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('mapa')">📅 Treino Completo da Terça (60 min)</button>
-    <button class="tab-btn" onclick="switchTab('aquecimento')">🏐 Aquecimento Lúdico & Coordenativo</button>
-    <button class="tab-btn" onclick="switchTab('fundamentos')">🎯 Guia de Elementos Técnicos de Base</button>
-</div>
-
-<!-- ABA 1: MAPA SEMANAL (TERÇA-FEIRA) -->
-<div id="tab-mapa" class="tab-content active">
-    <div class="controls">
-        <label for="weekSelect"><strong>Selecionar Terça-feira:</strong></label>
-        <select id="weekSelect" onchange="renderWeek()"></select>
-        <span id="phaseBadge" class="phase-badge">Fase</span>
-    </div>
-
-    <div class="card">
-        <div class="card-header">
-            <h2 id="weekTitle">Treino #1</h2>
-            <button id="checkBtn" class="check-btn" onclick="toggleCompleted()">
-                <span id="checkIcon">◯</span> <span id="checkText">Marcar Concluído</span>
-            </button>
-        </div>
-
-        <p style="margin-bottom: 18px; font-size: 0.95rem;"><strong>Foco Específico:</strong> <span id="weekFocus" style="color: var(--gray-dark); font-weight: 600;">-</span></p>
-
-        <div class="grid-2">
+<div class="container">
+    <header>
+        <div class="header-left">
+            <img src="logo.png" alt="FC Académicos" class="logo" onerror="this.style.display='none'">
             <div>
-                <div class="section-title"><span>12 MIN</span> Aquecimento Lúdico & Jogos de </div>
-                <ul id="prehabList"></ul>
-
-                <div class="section-title"><span>10 MIN</span> Coordenação, Equilíbrio & Saltos Básicos</div>
-                <ul id="plyoList"></ul>
-            </div>
-            <div>
-                <div class="section-title"><span>10 MIN</span> Agilidade, Jogos de Apanhada & Reflexos</div>
-                <ul id="speedList"></ul>
-
-                <div class="section-title"><span>13 MIN</span> Progressão Técnica sem Rede / Rede Baixa</div>
-                <ul id="strengthList"></ul>
+                <h1>FC Académicos</h1>
+                <p class="subtitle">Guia de Treino de Terça-Feira | Infantis B (60 min) - Voleibol de Formação</p>
             </div>
         </div>
+    </header>
 
-        <div style="margin-top: 10px;">
-            <div class="section-title"><span>15 MIN</span> Jogo Aplicado (Minivôlei / 2x2 / 3x3)</div>
-            <ul id="ballList"></ul>
-        </div>
-
-        <div class="info-box">
-            <strong>💡 Gestão Pedagógica (60 min):</strong> Foco absoluto na diversão, no desenvolvimento do hábito de passar a bola de toque/manchete e na cooperação entre colegas. Sem cargas de peso ou pliometria agressiva.
-        </div>
-
-        <div style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
-            <label for="notes"><strong>Anotações do Treinador:</strong></label>
-            <textarea id="notes" class="notes-area" placeholder="Anotar participação, dificuldades de passe ou evolução nos jogos..." oninput="saveNotes()"></textarea>
-        </div>
+    <!-- ABAS -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('mapa')">📅 Treino Completo da Terça (60 min)</button>
+        <button class="tab-btn" onclick="switchTab('aquecimento')">🏐 Aquecimento Lúdico & Coordenativo</button>
+        <button class="tab-btn" onclick="switchTab('ginasio')">🎯 Guia de Elementos Técnicos de Base</button>
     </div>
 
-    <div class="footer-nav">
-        <button class="nav-btn" onclick="changeWeek(-1)">← Terça Anterior</button>
-        <button class="nav-btn" onclick="changeWeek(1)">Próxima Terça →</button>
-    </div>
-</div>
+    <!-- ABA 1: MAPA SEMANAL (TERÇA-FEIRA) -->
+    <div id="tab-mapa" class="tab-content active">
+        <div class="controls">
+            <label for="weekSelect"><strong>Selecionar Terça-feira:</strong></label>
+            <select id="weekSelect" onchange="renderWeek()"></select>
+            <span id="phaseBadge" class="phase-badge">Fase</span>
+        </div>
 
-<!-- ABA 2: AQUECIMENTO LÚDICO (QUADRA) -->
-<div id="tab-aquecimento" class="tab-content">
-    <div class="card">
-        <h2 id="warmupTitle">🏐 Aquecimento Lúdico e Coordenativo da Semana</h2>
-        <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Duração total: 12 minutos. Utiliza brincadeiras de apanhada, deslocamentos variados e contacto leve com a bola (peso leve ou balão).</p>
-
-        <div class="grid-2">
-            <div>
-                <div class="section-title"><span>Passo 1</span> Jogos de Deslocamento e Apanhada (4 min)</div>
-                <ul id="warmupStep1"></ul>
-
-                <div class="section-title"><span>Passo 2</span> Mobilidade Articular em Brincadeira (4 min)</div>
-                <ul id="warmupStep2"></ul>
+        <div class="card">
+            <div class="card-header">
+                <h2 id="weekTitle">Treino #1</h2>
+                <button id="checkBtn" class="check-btn" onclick="toggleCompleted()">
+                    <span id="checkIcon">◯</span> <span id="checkText">Marcar Concluído</span>
+                </button>
             </div>
-            <div>
-                <div class="section-title"><span>Passo 3</span> Interação com Bola Leve / Balão (4 min)</div>
-                <ul id="warmupStep3"></ul>
 
-                <div class="info-box">
-                    <strong>📌 Nota do Treinador:</strong> Em Infantis B, o aquecimento deve ser dinâmico e parecer um jogo. Evite filas longas ou explicações teóricas demoradas.
+            <p style="margin-bottom: 18px; font-size: 0.95rem;"><strong>Foco Específico:</strong> <span id="weekFocus" style="color: var(--gray-dark); font-weight: 600;">-</span></p>
+
+            <div class="grid-2">
+                <div>
+                    <div class="section-title"><span>10 MIN</span> Aquecimento Lúdico & Mobilidade</div>
+                    <ul id="prehabList"></ul>
+
+                    <div class="section-title"><span>10 MIN</span> Coordenação Motora & Saltos Leves</div>
+                    <ul id="plyoList"></ul>
+                </div>
+                <div>
+                    <div class="section-title"><span>10 MIN</span> Agilidade, Jogo de Pés & Equilíbrio</div>
+                    <ul id="speedList"></ul>
+
+                    <div class="section-title"><span>15 MIN</span> Fortalecimento Lúdico & Postura</div>
+                    <ul id="strengthList"></ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <div class="section-title"><span>15 MIN</span> Minivôlei / Jogos Reduzidos com Bola</div>
+                <ul id="ballList"></ul>
+            </div>
+
+            <div class="info-box">
+                <strong>💡 Gestão Pedagógica (60 min):</strong> O aquecimento lúdico dura 10 min. Os 35 min centrais focam na coordenação, agilidade e postura corporal (sem cargas). Os 15 min finais são aplicados em minivôlei (1x1, 2x2 ou 3x3).
+            </div>
+
+            <div style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
+                <label for="notes"><strong>Anotações do Treinador:</strong></label>
+                <textarea id="notes" class="notes-area" placeholder="Anotar presença, disposição, evolução técnica ou dificuldades..." oninput="saveNotes()"></textarea>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <button class="nav-btn" onclick="changeWeek(-1)">← Terça Anterior</button>
+            <button class="nav-btn" onclick="changeWeek(1)">Próxima Terça →</button>
+        </div>
+    </div>
+
+    <!-- ABA 2: AQUECIMENTO LÚDICO -->
+    <div id="tab-aquecimento" class="tab-content">
+        <div class="card">
+            <h2 id="warmupTitle">🏐 Aquecimento Lúdico da Semana</h2>
+            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Duração total: 10 a 12 minutos. Focado em brincadeiras ativas, mobilidade natural e preparação articular alegre.</p>
+
+            <div class="grid-2">
+                <div>
+                    <div class="section-title"><span>Passo 1</span> Deslocamentos e Brincadeiras de Pista (4 min)</div>
+                    <ul id="warmupStep1"></ul>
+
+                    <div class="section-title"><span>Passo 2</span> Core Divertido & Postura (4 min)</div>
+                    <ul id="warmupStep2"></ul>
+                </div>
+                <div>
+                    <div class="section-title"><span>Passo 3</span> Ativação de Braços e Articulações (3 min)</div>
+                    <ul id="warmupStep3"></ul>
+
+                    <div class="info-box">
+                        <strong>📌 Nota do Treinador:</strong> Para os Infantis B, o aquecimento deve ser dinâmico através de jogos (ex: apanhada, estátua) para manter a alta motivação e atenção.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABA 3: GUIA TÉCNICO DE BASE -->
+    <div id="tab-ginasio" class="tab-content">
+        <div class="card">
+            <h2>🎯 Guia de Elementos Técnicos de Base (Infantis B)</h2>
+            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Matriz de progressão técnica adaptada ao minivôlei e construção dos fundamentos essenciais.</p>
+
+            <div class="grid-2">
+                <div>
+                    <div class="section-title"><span>Período 1</span> Postura e Toque de Dedos</div>
+                    <ul>
+                        <li><strong>Posição Base e Deslocamentos:</strong> Ensinar a base baixa, braços semiflexionados e olhar na bola.</li>
+                        <li><strong>Toque de Dedos Simulado:</strong> Movimento de "cesta" na testa, extensão coordenada de braços e pernas.</li>
+                        <li><strong>Lançar e Agarrar:</strong> Apanhar a bola em cima da testa com as mãos em concha.</li>
+                        <li><strong>Jogos de Toques Curtos:</strong> Autotoques contínuos ou a pares com bolas mais leves.</li>
+                    </ul>
+
+                    <div class="section-title"><span>Período 2</span> Manchete e Controle de Trajetória</div>
+                    <ul>
+                        <li><strong>Construção da prancha de braços:</strong> Dedos unidos, cotovelos esticados, bater com o antebraço.</li>
+                        <li><strong>Automanchetes estáticas e em andamento:</strong> Controlar a altura da bola sem pressa.</li>
+                        <li><strong>Manchete a dois:</strong> Um lança com precisão, o outro devolve em manchete correta.</li>
+                        <li><strong>Alinhamento corporal:</strong> Chegar atrás da bola antes de tocar.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="section-title"><span>Período 3</span> Serviço por Baixo e Mecânica</div>
+                    <ul>
+                        <li><strong>Posição do corpo e braço balouçante:</strong> Pé oposto à frente, balanço do braço como um pêndulo.</li>
+                        <li><strong>Serviço à parede:</strong> Acertar num alvo fixo a 3-4 metros para ganhar sensibilidade de força.</li>
+                        <li><strong>Serviço para o campo contrário (linha avançada):</strong> Encurtar a distância inicial se necessário para garantir sucesso.</li>
+                        <li><strong>Consistência:</strong> Conseguir acertar 5 serviços seguidos dentro do campo.</li>
+                    </ul>
+
+                    <div class="section-title"><span>Período 4</span> Introdução ao Jogo (Minivôlei 2x2 / 3x3)</div>
+                    <ul>
+                        <li><strong>Regra do "Três Toques" pedagógica:</strong> Tentar agarrar no 1º, tocar no 2º e passar no 3º (ou manchete e toque).</li>
+                        <li><strong>Comunicação em equipa:</strong> Dizer sempre "Minha!" e incentivar os colegas.</li>
+                        <li><strong>Noções básicas de rotação e ocupação de espaço:</strong> Entender onde ficar no campo reduzido.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ABA 3: GUIA TÉCNICO DE BASE -->
-<div id="tab-fundamentos" class="tab-content">
-    <div class="card">
-        <h2>🎯 Guia de Progressão Técnica (Infantis B)</h2>
-        <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Objetivos fundamentais para o escalão: aprender a dominar o toque de dedos, a manchete de controlo e o serviço por baixo.</p>
+<script>
+    const startDate = new Date(2026, 8, 15); // 15 Setembro 2026
+    const totalWeeks = 52;
+    
+    // VARIANTES DE AQUECIMENTO LÚDICO ROTATIVO (4 Ciclos)
+    const warmupWeeklyMap = [
+        {
+            s1: [
+                "Jogo dos Animais na Quadra: Andar como caranguejo, imitar rãs e saltitar como coelhos nas linhas (2 voltas).",
+                "Corrida com toques no chão sempre que o treinador apitar (2 passagens)."
+            ],
+            s2: [
+                "Prancha com apoio nos joelhos (ou pés): 2 séries × 20 segundos.",
+                "Ponte de glúteos divertida (levantar a anca para ver o teto): 2 séries × 8 repetições.",
+                "Super-homem a voar baixo na barriga: 2 séries × 15 segundos."
+            ],
+            s3: [
+                "Flexões na parede ou com joelhos no chão: 2 séries × 6 a 8 repetições.",
+                "Agachamento livre sentado e levantando de um banco: 2 séries × 10 repetições."
+            ]
+        },
+        {
+            s1: [
+                "Estátua Musical na Quadra: Correr livremente e congelar em posição de equilíbrio ao parar a música (2 minutos).",
+                "Passos laterais imitando caranguejos rápidos entre as linhas dos 3 metros."
+            ],
+            s2: [
+                "Prancha frontal curta: 2 séries × 15 segundos.",
+                "Abdominal simples com toque nas coxas: 2 séries × 10 repetições.",
+                "Ponte de glúteos alternando a subida de um calcanhar: 2 séries × 8 repetições."
+            ],
+            s3: [
+                "Empurrar a parede com força controlada (ativação de ombros): 2 séries × 10 segundos.",
+                "Saltitos suaves a pés juntos no mesmo sítio: 2 séries × 15 repetições."
+            ]
+        },
+        {
+            s1: [
+                "Jogo do Apanhador Cooperativo: Evitar o 'tubarão' mudando de campo em segurança pelas linhas.",
+                "Corrida de costas a olhar para a frente (lenta e controlada) nas linhas laterais."
+            ],
+            s2: [
+                "Prancha lateral com apoio nos joelhos: 2 séries × 15 segundos por lado.",
+                "Bicicleta deitada no chão bem devagar: 2 séries × 10 repetições.",
+                "Extensão de costas em cima de um colchão macio: 2 séries × 8 repetições."
+            ],
+            s3: [
+                "Agachamento com salto pequeno de 'pipoca': 2 séries × 6 repetições.",
+                "Círculos largos com os braços para frente e para trás: 2 séries × 10 repetições."
+            ]
+        },
+        {
+            s1: [
+                "Circuito de agilidade com cordas e bambolês no chão (saltinhos coordenados).",
+                "Corrida em zigue-zague contornando pinos/cones coloridos."
+            ],
+            s2: [
+                "Prancha com toque alternado nos joelhos: 2 séries × 20 segundos.",
+                "Abdominal curto (subir só os ombros): 2 séries × 10 repetições.",
+                "Ponte de glúteos mantendo a bola presa entre os joelhos: 2 séries × 8 repetições."
+            ],
+            s3: [
+                "Flexões inclinadas num banco seguro: 2 séries × 8 repetições.",
+                "Lançamento livre de bola leve para cima e apanhar com palmas: 2 séries × 10 repetições."
+            ]
+        }
+    ];
 
-        <div class="grid-2">
-            <div>
-                <div class="section-title"><span>1º Trimestre</span> Postura e Manchete de Base</div>
-                <ul>
-                    <li><strong>Posição Fundamental:</strong> Flexão de joelhos e tronco ligeiramente inclinado para a frente.</li>
-                    <li><strong>Manchete Estável:</strong> Unir braços sem dobrar cotovelos, usando o corpo todo para impulsionar a bola.</li>
-                    <li><strong>Jogo de Duplas (Catch-Ball):</strong> Apanhar a bola em cima e devolver com manchete controlada.</li>
-                    <li><strong>Autopasse:</strong> Dar toques para cima seguidos para ganhar sensibilidade ao toque.</li>
-                </ul>
+    const plyoVariations = [
+        [
+            "Saltitos sucessivos de corda (ou simulados) no chão: 3 séries × 20 segundos. Descanso: 45s.",
+            "Saltar para cima de um colchão baixo ou tapete grosso: 3 séries × 5 saltos suaves. Descanso: 45s.",
+            "Salto com braços ao alto simulando bloqueio em miniatura: 3 séries × 6 saltos. Descanso: 30s."
+        ],
+        [
+            "Saltitos alternados de pé esquerdo e direito (passo galope): 3 séries × 10 por perna. Descanso: 45s.",
+            "Entradas de remate com 2 passos curtos (sem salto máximo): 3 séries × 5 repetições. Descanso: 45s.",
+            "Saltos sobre pequenas linhas no chão com os pés juntos: 3 séries × 8 saltos. Descanso: 30s."
+        ],
+        [
+            "Saltos em estrela (abrir braços e pernas no ar): 3 séries × 6 repetições. Descanso: 45s.",
+            "Salto vertical leve tocando numa linha imaginária na rede: 3 séries × 5 saltos. Descanso: 45s.",
+            "Saltitos laterais leves por cima de uma corda no chão: 3 séries × 8 saltos. Descanso: 30s."
+        ],
+        [
+            "Corrida com impulsão e elevação de joelhos a 50% de intensidade: 3 séries × 10m. Descanso: 45s.",
+            "Salto de bloco com foco na aterrissagem a dois pés amortecendo: 3 séries × 6 saltos. Descanso: 45s.",
+            "Saltos contínuos e curtos imitando molas: 3 séries × 15 segundos. Descanso: 30s."
+        ]
+    ];
 
-                <div class="section-title"><span>2º Trimestre</span> Toque de Dedos e Serviço por Baixo</div>
-                <ul>
-                    <li><strong>Forma dos Dedos:</strong> "Chapéu" na testa com indicador e polegar em triângulo.</li>
-                    <li><strong>Serviço por Baixo:</strong> Posição de passo, braço balança como um pêndulo e impacto limpo na base da bola.</li>
-                    <li><strong>Toque a Duplas:</strong> Trocar toques curtos com um colega a curta distância.</li>
-                </ul>
-            </div>
-            <div>
-                <div class="section-title"><span>3º Trimestre</span> Introdução ao Minivôlei (2x2 e 3x3)</div>
-                <ul>
-                    <li><strong>Regras Simplificadas:</strong> Permitir apanhar a bola e lançar na fase inicial, evoluindo progressivamente para o toque regulamentar.</li>
-                    <li><strong>Posicionamento em Quadra:</strong> Compreender a rotação simples e a ocupação do espaço defensivo.</li>
-                    <li><strong>Comunicação:</strong> Gritar "Minha!" para evitar choques entre colegas.</li>
-                </ul>
+    const speedVariations = [
+        [
+            "Escada de coordenação (1 apoio por espaço em marcha rápida): 3 séries × 2 passagens. Descanso: 30s.",
+            "Pique curto de reação (arrancar da posição sentada para a linha de 3m): 3 séries × 3 repetições. Descanso: 45s."
+        ],
+        [
+            "Escada de coordenação (passos laterais ritmados): 3 séries × 2 passagens. Descanso: 30s.",
+            "Mudança de direção em 3 cones em forma de triângulo: 3 séries × 3 repetições. Descanso: 45s."
+        ],
+        [
+            "Saltos de corda em ritmo constante: 3 séries × 30 segundos. Descanso: 30s.",
+            "Corrida de frente e costas em curta distância (3m a 6m): 3 séries × 4 repetições. Descanso: 45s."
+        ],
+        [
+            "Escada de coordenação (entrada e saída rápida a pés juntos): 3 séries × 2 passagens. Descanso: 30s.",
+            "Reação a palmas do treinador para iniciar sprint curto: 3 séries × 4 repetições. Descanso: 45s."
+        ]
+    ];
 
-                <div class="section-title"><span>Jogos e Desafios</span></div>
-                <ul>
-                    <li><strong>Desafio do Cesto:</strong> Tentar fazer 10 toques seguidos sem a bola cair ao chão.</li>
-                    <li><strong>Torneio Interno 2x2:</strong> Jogos curtos de 5 minutos para aplicar o que foi aprendido.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+    const strengthVariations = [
+        [
+            "Agachamento livre sem peso (sentar e levantar de costas direitas): 3 séries × 10 repetições. Descanso: 45s.",
+            "Prancha abdominal com apoio nos joelhos: 3 séries × 25 segundos. Descanso: 30s.",
+            "Ponte de glúteos no chão: 3 séries × 10 repetições. Descanso: 45s."
+        ],
+        [
+            "Afundos curtos estáticos sem peso: 3 séries × 6 repetições por perna. Descanso: 45s.",
+            "Prancha lateral apoiada nos antebraços/joelhos: 3 séries × 20 segundos por lado. Descanso: 30s.",
+            "Elevação dos calcanhares (panturrilhas) no chão: 3 séries × 12 repetições. Descanso: 45s."
+        ],
+        [
+            "Agachamento curto com braços à frente: 3 séries × 10 repetições. Descanso: 45s.",
+            "Abdominal em V curto (encolher joelhos ao peito sentado): 3 séries × 8 repetições. Descanso: 45s.",
+            "Extensão de braços inclinada no espaldar ou parede: 3 séries × 8 repetições. Descanso: 45s."
+        ],
+        [
+            "Passada larga frontal (lunge) controlada: 3 séries × 6 repetições por perna. Descanso: 45s.",
+            "Prancha frontal com elevação alternada de braço: 3 séries × 20 segundos. Descanso: 30s.",
+            "Ponte de glúteos com subida lenta: 3 séries × 10 repetições. Descanso: 45s."
+        ]
+    ];
+
+    const ballVariations = [
+        [
+            "Minivôlei 2x2 cooperativo: O objetivo é conseguir fazer 4 toques seguidos (recepção, passe e toque/chapa) sem deixar cair.",
+            "Autotoques de dedos e manchetes em duplas com balão ou bola leve."
+        ],
+        [
+            "Serviço por baixo para alvo marcado no campo contrário (ex: hula-hop ou colchão no chão).",
+            "Minivôlei 3x3 simplificado com ressalto permitido (bola pode bater uma vez no chão antes de tocar)."
+        ],
+        [
+            "Exercício de 'Lança e Apanha': Receber a bola do colega sempre acima da testa com as mãos em formato de cesto.",
+            "Minivôlei 2x2 com rede baixa ou elástico: Foco em mandar a bola para o campo vizinho com controle."
+        ],
+        [
+            "Circuito técnico com bola: 1 min de toques de dedos à parede, 1 min de manchetes e 1 min de serviço por baixo.",
+            "Jogo coletivo reduzido 3x3 com contagem de pontos divertida e aplausos a cada boa jogada."
+        ]
+    ];
+
+    let weeksData = [];
+
+    for(let i = 0; i < totalWeeks; i++) {
+        let currentDate = new Date(startDate);
+        currentDate.setDate(startDate.getDate() + (i * 7));
+        let dateStr = currentDate.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        
+        let phase = "";
+        let strength = [];
+
+        if(i < 8) {
+            phase = "Adaptação Motora & Postural (Iniciação Geral)";
+            strength = strengthVariations[0];
+        } else if(i >= 8 && i < 20) {
+            phase = "Coordenação & Fundamentos do Toque (Base Técnica)";
+            strength = strengthVariations[1];
+        } else if(i >= 20 && i < 38) {
+            phase = "Consolidação da Manchete & Minivôlei (Fase Competitiva Lúdica)";
+            strength = strengthVariations[2];
+        } else {
+            phase = "Jogos, Festa do Vôlei & Autonomia (Encerramento)";
+            strength = strengthVariations[3];
+        }
+
+        let pIdx = i % 4;
+
+        weeksData.push({
+            id: i,
+            date: dateStr,
+            title: `Treino #${i+1} (${dateStr})`,
+            phase: phase,
+            focus: i % 2 === 0 ? "Postura + Toque de Dedos + Minivôlei 2x2" : "Manchete + Serviço por Baixo + Jogos Reduzidos",
+            prehab: [
+                "Aquecimento Lúdico de Quadra (Aba 2): 10 a 12 minutos",
+                "Brincadeiras de mobilidade e atenção",
+                "Ativação articular sem pressões"
+            ],
+            plyo: plyoVariations[pIdx],
+            speed: speedVariations[pIdx],
+            strength: strength,
+            ball: ballVariations[pIdx],
+            warmup: warmupWeeklyMap[pIdx],
+            completed: false,
+            notes: ""
+        });
+    }
+
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+        event.target.classList.add('active');
+        document.getElementById(`tab-${tabId}`).classList.add('active');
+    }
+
+    function loadStorage() {
+        const saved = localStorage.getItem('fc_academicos_infantis_b_v1');
+        if(saved) {
+            const parsed = JSON.parse(saved);
+            parsed.forEach((item, idx) => {
+                if(weeksData[idx]) {
+                    weeksData[idx].completed = item.completed;
+                    weeksData[idx].notes = item.notes;
+                }
+            });
+        }
+    }
+
+    function saveStorage() {
+        const toSave = weeksData.map(w => ({ completed: w.completed, notes: w.notes }));
+        localStorage.setItem('fc_academicos_infantis_b_v1', JSON.stringify(toSave));
+    }
+
+    function init() {
+        loadStorage();
+        const select = document.getElementById('weekSelect');
+        select.innerHTML = '';
+        
+        weeksData.forEach((w, idx) => {
+            let opt = document.createElement('option');
+            opt.value = idx;
+            opt.textContent = `${w.date} - ${w.phase}`;
+            select.appendChild(opt);
+        });
+
+        renderWeek();
+    }
+
+    function renderWeek() {
+        const select = document.getElementById('weekSelect');
+        currentWeekIndex = parseInt(select.value) || 0;
+        const w = weeksData[currentWeekIndex];
+
+        document.getElementById('weekTitle').textContent = w.title;
+        document.getElementById('weekFocus').textContent = w.focus;
+        
+        const badge = document.getElementById('phaseBadge');
+        badge.textContent = w.phase;
+
+        fillList('prehabList', w.prehab);
+        fillList('plyoList', w.plyo);
+        fillList('speedList', w.speed);
+        fillList('strengthList', w.strength);
+        fillList('ballList', w.ball);
+
+        document.getElementById('warmupTitle').textContent = `🏐 Aquecimento Lúdico Específico (${w.date})`;
+        fillList('warmupStep1', w.warmup.s1);
+        fillList('warmupStep2', w.warmup.s2);
+        fillList('warmupStep3', w.warmup.s3);
+
+        const checkBtn = document.getElementById('checkBtn');
+        if(w.completed) {
+            checkBtn.className = "check-btn completed";
+            document.getElementById('checkIcon').textContent = "✓";
+            document.getElementById('checkText').textContent = "Treino Concluído";
+        } else {
+            checkBtn.className = "check-btn";
+            document.getElementById('checkIcon').textContent = "◯";
+            document.getElementById('checkText').textContent = "Marcar Concluído";
+        }
+
+        document.getElementById('notes').value = w.notes || "";
+    }
+
+    function fillList(id, arr) {
+        const ul = document.getElementById(id);
+        ul.innerHTML = '';
+        arr.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+    }
+
+    function toggleCompleted() {
+        weeksData[currentWeekIndex].completed = !weeksData[currentWeekIndex].completed;
+        saveStorage();
+        renderWeek();
+    }
+
+    function saveNotes() {
+        weeksData[currentWeekIndex].notes = document.getElementById('notes').value;
+        saveStorage();
+    }
+
+    function changeWeek(dir) {
+        let newIdx = currentWeekIndex + dir;
+        if(newIdx >= 0 && newIdx < totalWeeks) {
+            document.getElementById('weekSelect').value = newIdx;
+            renderWeek();
+        }
+    }
+
+    window.onload = init;
+</script>
+
+</body>
+</html>
