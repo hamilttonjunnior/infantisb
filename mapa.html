@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FC Académicos - Sistema Anual de Treino (Infantis B)</title>
+    <title>FC Académicos - Sistema Anual de Treino (Infantis B - Avançadas / 4x2)</title>
     <style>
         :root {
             --bg-color: #fcfcfc;
@@ -294,7 +294,7 @@
             <img src="logo.png" alt="FC Académicos" class="logo" onerror="this.style.display='none'">
             <div>
                 <h1>FC Académicos</h1>
-                <p class="subtitle">Guia de Treino de Terça-Feira | Infantis B (60 min) - Voleibol de Formação</p>
+                <p class="subtitle">Guia de Treino de Terça-Feira | Infantis B - Nível Avançado / Sistema 4x2 (60 min)</p>
             </div>
         </div>
     </header>
@@ -302,8 +302,8 @@
     <!-- ABAS -->
     <div class="tabs">
         <button class="tab-btn active" onclick="switchTab('mapa')">📅 Treino Completo da Terça (60 min)</button>
-        <button class="tab-btn" onclick="switchTab('aquecimento')">🏐 Aquecimento Lúdico & Coordenativo</button>
-        <button class="tab-btn" onclick="switchTab('ginasio')">🎯 Guia de Elementos Técnicos de Base</button>
+        <button class="tab-btn" onclick="switchTab('aquecimento')">🏐 Aquecimento Dinâmico & Articular</button>
+        <button class="tab-btn" onclick="switchTab('ginasio')">🎯 Guia Tático 4x2 & Transições (K1/K2)</button>
     </div>
 
     <!-- ABA 1: MAPA SEMANAL (TERÇA-FEIRA) -->
@@ -326,33 +326,33 @@
 
             <div class="grid-2">
                 <div>
-                    <div class="section-title"><span>10 MIN</span> Aquecimento Lúdico & Mobilidade</div>
+                    <div class="section-title"><span>10 MIN</span> Aquecimento Dinâmico & Ativação Core</div>
                     <ul id="prehabList"></ul>
 
-                    <div class="section-title"><span>10 MIN</span> Coordenação Motora & Saltos Leves</div>
+                    <div class="section-title"><span>10 MIN</span> Pliometria Reativa & Saltos de Rede</div>
                     <ul id="plyoList"></ul>
                 </div>
                 <div>
-                    <div class="section-title"><span>10 MIN</span> Agilidade, Jogo de Pés & Equilíbrio</div>
+                    <div class="section-title"><span>10 MIN</span> Agilidade, Deslocamentos & Braços</div>
                     <ul id="speedList"></ul>
 
-                    <div class="section-title"><span>15 MIN</span> Fortalecimento Lúdico & Postura</div>
+                    <div class="section-title"><span>15 MIN</span> Força Funcional & Prevenção (Core/Ombros)</div>
                     <ul id="strengthList"></ul>
                 </div>
             </div>
 
             <div style="margin-top: 10px;">
-                <div class="section-title"><span>15 MIN</span> Minivôlei / Jogos Reduzidos com Bola</div>
+                <div class="section-title"><span>15 MIN</span> Bloco Tático (Sistema 4x2, Infiltrações e Transições)</div>
                 <ul id="ballList"></ul>
             </div>
 
             <div class="info-box">
-                <strong>💡 Gestão Pedagógica (60 min):</strong> O aquecimento lúdico dura 10 min. Os 35 min centrais focam na coordenação, agilidade e postura corporal (sem cargas). Os 15 min finais são aplicados em minivôlei (1x1, 2x2 ou 3x3).
+                <strong>💡 Gestão de Carga (60 min):</strong> Aquecimento rápido de 10 min. 35 min centrais focados em pliometria ajustada à idade e agilidade de pés. 15 min finais dedicados ao sistema tático 4x2 (K1/K2).
             </div>
 
             <div style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
                 <label for="notes"><strong>Anotações do Treinador:</strong></label>
-                <textarea id="notes" class="notes-area" placeholder="Anotar presença, disposição, evolução técnica ou dificuldades..." oninput="saveNotes()"></textarea>
+                <textarea id="notes" class="notes-area" placeholder="Anotar desempenho nas rotações 4x2, fluidez da infiltração ou ajustes táticos..." oninput="saveNotes()"></textarea>
             </div>
         </div>
 
@@ -362,70 +362,67 @@
         </div>
     </div>
 
-    <!-- ABA 2: AQUECIMENTO LÚDICO -->
+    <!-- ABA 2: AQUECIMENTO DINÂMICO -->
     <div id="tab-aquecimento" class="tab-content">
         <div class="card">
-            <h2 id="warmupTitle">🏐 Aquecimento Lúdico da Semana</h2>
-            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Duração total: 10 a 12 minutos. Focado em brincadeiras ativas, mobilidade natural e preparação articular alegre.</p>
+            <h2 id="warmupTitle">🏐 Aquecimento Dinâmico da Semana</h2>
+            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Duração total: 10 a 12 minutos. Focado em mobilidade ativa, prevenção de ombros/joelhos e reatividade para atletas com ritmo competitivo.</p>
 
             <div class="grid-2">
                 <div>
-                    <div class="section-title"><span>Passo 1</span> Deslocamentos e Brincadeiras de Pista (4 min)</div>
+                    <div class="section-title"><span>Passo 1</span> Deslocamentos Técnicos de Voleibol (4 min)</div>
                     <ul id="warmupStep1"></ul>
 
-                    <div class="section-title"><span>Passo 2</span> Core Divertido & Postura (4 min)</div>
+                    <div class="section-title"><span>Passo 2</span> Core Estável & Anti-rotação (4 min)</div>
                     <ul id="warmupStep2"></ul>
                 </div>
                 <div>
-                    <div class="section-title"><span>Passo 3</span> Ativação de Braços e Articulações (3 min)</div>
+                    <div class="section-title"><span>Passo 3</span> Ativação de Ombros & Membros Inferiores (3 min)</div>
                     <ul id="warmupStep3"></ul>
 
                     <div class="info-box">
-                        <strong>📌 Nota do Treinador:</strong> Para os Infantis B, o aquecimento deve ser dinâmico através de jogos (ex: apanhada, estátua) para manter a alta motivação e atenção.
+                        <strong>📌 Nota do Treinador:</strong> Como já jogam com ritmo e sistema 4x2, o aquecimento exige rigor técnico nos deslocamentos laterais, cruzados e entradas de remate.
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ABA 3: GUIA TÉCNICO DE BASE -->
+    <!-- ABA 3: GUIA TÁTICO 4X2 -->
     <div id="tab-ginasio" class="tab-content">
         <div class="card">
-            <h2>🎯 Guia de Elementos Técnicos de Base (Infantis B)</h2>
-            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Matriz de progressão técnica adaptada ao minivôlei e construção dos fundamentos essenciais.</p>
+            <h2>🎯 Guia Tático: Sistema 4x2 e Dinâmicas de Jogo (Infantis B Avançadas)</h2>
+            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 0.9rem;">Matriz de consolidação do sistema 4x2 com 2 distribuidoras em oposição, posições na receção de saque e transições K1/K2.</p>
 
             <div class="grid-2">
                 <div>
-                    <div class="section-title"><span>Período 1</span> Postura e Toque de Dedos</div>
+                    <div class="section-title"><span>Fase 1</span> Infiltrações e Posições Base (4x2)</div>
                     <ul>
-                        <li><strong>Posição Base e Deslocamentos:</strong> Ensinar a base baixa, braços semiflexionados e olhar na bola.</li>
-                        <li><strong>Toque de Dedos Simulado:</strong> Movimento de "cesta" na testa, extensão coordenada de braços e pernas.</li>
-                        <li><strong>Lançar e Agarrar:</strong> Apanhar a bola em cima da testa com as mãos em concha.</li>
-                        <li><strong>Jogos de Toques Curtos:</strong> Autotoques contínuos ou a pares com bolas mais leves.</li>
+                        <li><strong>Regra de Oposição das Distribuidoras:</strong> Garantir que a distribuidora na linha de trás infiltra sempre da zona 1 para a zona 2/3, e a da frente joga nas posições delanteras.</li>
+                        <li><strong>Organização na Receção de Saque (K1):</strong> Linha de passe com 2 ou 3 atletas (evitando sobreposição com a distribuidora que vem de trás).</li>
+                        <li><strong>Leitura de Espaços:</strong> Treinar a posição de resguardo e cobertura do atacante logo após o passe.</li>
+                        <li><strong>Dinâmica de Tempo de Bola:</strong> Sintonizar a velocidade do passe curto para as pontas (zona 4 e zona 2).</li>
                     </ul>
 
-                    <div class="section-title"><span>Período 2</span> Manchete e Controle de Trajetória</div>
+                    <div class="section-title"><span>Fase 2</span> Transição Defesa-Ataque (K2)</div>
                     <ul>
-                        <li><strong>Construção da prancha de braços:</strong> Dedos unidos, cotovelos esticados, bater com o antebraço.</li>
-                        <li><strong>Automanchetes estáticas e em andamento:</strong> Controlar a altura da bola sem pressa.</li>
-                        <li><strong>Manchete a dois:</strong> Um lança com precisão, o outro devolve em manchete correta.</li>
-                        <li><strong>Alinhamento corporal:</strong> Chegar atrás da bola antes de tocar.</li>
+                        <li><strong>Organização do Bloco Duplo:</strong> Ajuste rápido dos blocos nas pontas com leitura do distribuidor adversário.</li>
+                        <li><strong>Posicionamento de Defesa de Campo:</strong> Alinhamento da defesa média e profunda consoante o bloco.</li>
+                        <li><strong>Transição Imediata:</strong> Defesa defensiva com ressalto em direção à zona de construção da distribuidora infiltrada.</li>
                     </ul>
                 </div>
                 <div>
-                    <div class="section-title"><span>Período 3</span> Serviço por Baixo e Mecânica</div>
+                    <div class="section-title"><span>Fase 3</span> Ajustes Finos e Comunicação</div>
                     <ul>
-                        <li><strong>Posição do corpo e braço balouçante:</strong> Pé oposto à frente, balanço do braço como um pêndulo.</li>
-                        <li><strong>Serviço à parede:</strong> Acertar num alvo fixo a 3-4 metros para ganhar sensibilidade de força.</li>
-                        <li><strong>Serviço para o campo contrário (linha avançada):</strong> Encurtar a distância inicial se necessário para garantir sucesso.</li>
-                        <li><strong>Consistência:</strong> Conseguir acertar 5 serviços seguidos dentro do campo.</li>
+                        <li><strong>Comunicação Verbal Constante:</strong> Gritar "Eu!", "Vem!", "Lá vai!", "Finta!" para evitar bolas perdidas entre zonas.</li>
+                        <li><strong>Fluidez nas Rotas de Infiltração:</strong> Evitar faltas de posições no momento do serviço adversário (foco nas regras rotacionais).</li>
+                        <li><strong>Resolução de Situações de Crise:</strong> O que fazer quando o passe sai defetivo (bola de resgate para a zona 4 alta).</li>
                     </ul>
 
-                    <div class="section-title"><span>Período 4</span> Introdução ao Jogo (Minivôlei 2x2 / 3x3)</div>
+                    <div class="section-title"><span>Fase 4</span> Situações Especiais de Jogo</div>
                     <ul>
-                        <li><strong>Regra do "Três Toques" pedagógica:</strong> Tentar agarrar no 1º, tocar no 2º e passar no 3º (ou manchete e toque).</li>
-                        <li><strong>Comunicação em equipa:</strong> Dizer sempre "Minha!" e incentivar os colegas.</li>
-                        <li><strong>Noções básicas de rotação e ocupação de espaço:</strong> Entender onde ficar no campo reduzido.</li>
+                        <li><strong>Final de Set sob Pressão (20-20):</strong> Simulação de pontos decisivos com obrigação de executar o sistema 4x2 limpo.</li>
+                        <li><strong>Gestão de Erros Não Forçados:</strong> Análise imediata de posicionamentos incorretos após falha defensiva.</li>
                     </ul>
                 </div>
             </div>
@@ -437,151 +434,151 @@
     const startDate = new Date(2026, 8, 15); // 15 Setembro 2026
     const totalWeeks = 52;
     
-    // VARIANTES DE AQUECIMENTO LÚDICO ROTATIVO (4 Ciclos)
+    // VARIANTES DE AQUECIMENTO DINÂMICO ROTATIVO (4 Ciclos)
     const warmupWeeklyMap = [
         {
             s1: [
-                "Jogo dos Animais na Quadra: Andar como caranguejo, imitar rãs e saltitar como coelhos nas linhas (2 voltas).",
-                "Corrida com toques no chão sempre que o treinador apitar (2 passagens)."
+                "Deslocamento lateral defensivo até à linha dos 3m -> Mudança para corrida de costas até à linha de fundo (2 voltas).",
+                "Skipping controlado com braços ativos simulando passe -> Aceleração curta de 5m (3 passagens)."
             ],
             s2: [
-                "Prancha com apoio nos joelhos (ou pés): 2 séries × 20 segundos.",
-                "Ponte de glúteos divertida (levantar a anca para ver o teto): 2 séries × 8 repetições.",
-                "Super-homem a voar baixo na barriga: 2 séries × 15 segundos."
+                "Prancha frontal estática com contração máxima de glúteos: 2 séries × 30 segundos.",
+                "Prancha lateral com apoio no antebraço: 2 séries × 20 segundos por lado.",
+                "Dead Bug controlado (foco na estabilização lombar): 2 séries × 10 repetições por perna."
             ],
             s3: [
-                "Flexões na parede ou com joelhos no chão: 2 séries × 6 a 8 repetições.",
-                "Agachamento livre sentado e levantando de um banco: 2 séries × 10 repetições."
+                "Flexões de braço tradicionais ou no banco: 2 séries × 10 repetições.",
+                "Agachamento livre com velocidade de descida e subida controlada: 2 séries × 12 repetições."
             ]
         },
         {
             s1: [
-                "Estátua Musical na Quadra: Correr livremente e congelar em posição de equilíbrio ao parar a música (2 minutos).",
-                "Passos laterais imitando caranguejos rápidos entre as linhas dos 3 metros."
+                "Passos cruzados laterais na linha dos 3 metros (ida e volta) + Arranque explosivo de 5m (2 voltas).",
+                "Afundos dinâmicos alternados com rotação de tronco: 1 série × 8 passos por perna."
             ],
             s2: [
-                "Prancha frontal curta: 2 séries × 15 segundos.",
-                "Abdominal simples com toque nas coxas: 2 séries × 10 repetições.",
-                "Ponte de glúteos alternando a subida de um calcanhar: 2 séries × 8 repetições."
+                "Prancha com toque alternado nos ombros: 2 séries × 30 segundos.",
+                "Abdominal remador (V-Up) adaptado ao ritmo: 2 séries × 10 repetições.",
+                "Ponte de glúteos unipodal (1 perna): 2 séries × 8 repetições por perna."
             ],
             s3: [
-                "Empurrar a parede com força controlada (ativação de ombros): 2 séries × 10 segundos.",
-                "Saltitos suaves a pés juntos no mesmo sítio: 2 séries × 15 repetições."
+                "Afundo estático com elevação de braços (ativação de ombros): 2 séries × 8 por perna.",
+                "Elevação de calcanhares rápida (panturrilha): 2 séries × 15 repetições."
             ]
         },
         {
             s1: [
-                "Jogo do Apanhador Cooperativo: Evitar o 'tubarão' mudando de campo em segurança pelas linhas.",
-                "Corrida de costas a olhar para a frente (lenta e controlada) nas linhas laterais."
+                "Deslocamento em Zigue-Zague contornando cones com paragem técnica em base baixa (2 voltas).",
+                "Saltitos laterais rápidos de agilidade: 2 séries × 30 segundos."
             ],
             s2: [
-                "Prancha lateral com apoio nos joelhos: 2 séries × 15 segundos por lado.",
-                "Bicicleta deitada no chão bem devagar: 2 séries × 10 repetições.",
-                "Extensão de costas em cima de um colchão macio: 2 séries × 8 repetições."
+                "Prancha frontal com elevação alternada de braço e perna oposta: 2 séries × 25 segundos.",
+                "Abdominal inferior (tesoura de pernas controlada): 2 séries × 12 repetições.",
+                "Extensão de costas (super-homem dinâmico): 2 séries × 12 repetições."
             ],
             s3: [
-                "Agachamento com salto pequeno de 'pipoca': 2 séries × 6 repetições.",
-                "Círculos largos com os braços para frente e para trás: 2 séries × 10 repetições."
+                "Flexões abertas (peito) no chão: 2 séries × 8 repetições.",
+                "Isometria de agachamento a 90° (Wall Sit): 2 séries × 30 segundos."
             ]
         },
         {
             s1: [
-                "Circuito de agilidade com cordas e bambolês no chão (saltinhos coordenados).",
-                "Corrida em zigue-zague contornando pinos/cones coloridos."
+                "Circuito de reação visual: Arranque rápido a partir de posição de defesa baixa mediante sinal do treinador (3 passagens).",
+                "Passos galope lateral viradas para a rede: 2 voltas."
             ],
             s2: [
-                "Prancha com toque alternado nos joelhos: 2 séries × 20 segundos.",
-                "Abdominal curto (subir só os ombros): 2 séries × 10 repetições.",
-                "Ponte de glúteos mantendo a bola presa entre os joelhos: 2 séries × 8 repetições."
+                "Pallof Press com elástico fixo na rede: 2 séries × 10 repetições por lado.",
+                "Abdominal oblíquo (rotação russa com ou sem bola leve): 2 séries × 12 repetições por lado.",
+                "Ponte de glúteos com contração de 2 segundos no topo: 2 séries × 10 repetições."
             ],
             s3: [
-                "Flexões inclinadas num banco seguro: 2 séries × 8 repetições.",
-                "Lançamento livre de bola leve para cima e apanhar com palmas: 2 séries × 10 repetições."
+                "Flexões explosivas (saída rápida do chão): 2 séries × 6 repetições.",
+                "Agachamento com salto leve (Jump Squat controlado): 2 séries × 8 repetições."
             ]
         }
     ];
 
     const plyoVariations = [
         [
-            "Saltitos sucessivos de corda (ou simulados) no chão: 3 séries × 20 segundos. Descanso: 45s.",
-            "Saltar para cima de um colchão baixo ou tapete grosso: 3 séries × 5 saltos suaves. Descanso: 45s.",
-            "Salto com braços ao alto simulando bloqueio em miniatura: 3 séries × 6 saltos. Descanso: 30s."
+            "Salto para caixa média / colchão firme (Pliometria moderada): 3 séries × 5 saltos com aterrissagem amortecida. Descanso: 60s.",
+            "Entradas de ataque reais com 3 passos e travagem de calcanhar: 3 séries × 5 entradas. Descanso: 45s.",
+            "Saltos de bloqueio na rede com deslocamento prévio: 3 séries × 5 saltos. Descanso: 45s."
         ],
         [
-            "Saltitos alternados de pé esquerdo e direito (passo galope): 3 séries × 10 por perna. Descanso: 45s.",
-            "Entradas de remate com 2 passos curtos (sem salto máximo): 3 séries × 5 repetições. Descanso: 45s.",
-            "Saltos sobre pequenas linhas no chão com os pés juntos: 3 séries × 8 saltos. Descanso: 30s."
+            "Drop jump leve (descida de pequena altura + salto vertical imediato): 3 séries × 4 saltos rápidos. Descanso: 60s.",
+            "Saltos laterais contínuos sobre obstáculo baixo: 3 séries × 6 saltos. Descanso: 45s.",
+            "Chamada de ataque com simulação de braço armado: 3 séries × 5 repetições. Descanso: 45s."
         ],
         [
-            "Saltos em estrela (abrir braços e pernas no ar): 3 séries × 6 repetições. Descanso: 45s.",
-            "Salto vertical leve tocando numa linha imaginária na rede: 3 séries × 5 saltos. Descanso: 45s.",
-            "Saltitos laterais leves por cima de uma corda no chão: 3 séries × 8 saltos. Descanso: 30s."
+            "Salto vertical máximo com braços estendidos junto à rede: 3 séries × 5 saltos de alta qualidade. Descanso: 60s.",
+            "Saltos em 1 perna sobre linha da quadra (alternado): 3 séries × 6 saltos por perna. Descanso: 45s.",
+            "Entradas de ataque de 2.ª linha (fundo) com impulsão: 3 séries × 4 repetições. Descanso: 60s."
         ],
         [
-            "Corrida com impulsão e elevação de joelhos a 50% de intensidade: 3 séries × 10m. Descanso: 45s.",
-            "Salto de bloco com foco na aterrissagem a dois pés amortecendo: 3 séries × 6 saltos. Descanso: 45s.",
-            "Saltos contínuos e curtos imitando molas: 3 séries × 15 segundos. Descanso: 30s."
+            "Escada de agilidade + Saída direta para salto de bloqueio: 3 séries × 4 passagens. Descanso: 60s.",
+            "Saltos em profundidade controlada para colchão: 3 séries × 4 saltos. Descanso: 60s.",
+            "Ataques rápidos com bola lançada pelo treinador: 3 séries × 6 remates controlados. Descanso: 45s."
         ]
     ];
 
     const speedVariations = [
         [
-            "Escada de coordenação (1 apoio por espaço em marcha rápida): 3 séries × 2 passagens. Descanso: 30s.",
-            "Pique curto de reação (arrancar da posição sentada para a linha de 3m): 3 séries × 3 repetições. Descanso: 45s."
+            "Escada de agilidade (2 apoios por espaço em alta velocidade): 3 séries × 2 passagens. Descanso: 45s.",
+            "Sprint curto de reação (0 aos 6m) com mudança para passe de manchete: 3 séries × 3 repetições. Descanso: 60s."
         ],
         [
-            "Escada de coordenação (passos laterais ritmados): 3 séries × 2 passagens. Descanso: 30s.",
-            "Mudança de direção em 3 cones em forma de triângulo: 3 séries × 3 repetições. Descanso: 45s."
+            "Escada de agilidade (Entrada e saída lateral rápida): 3 séries × 2 passagens. Descanso: 45s.",
+            "Circuito de transição defensiva (Defesa em zona 5 -> Cobertura na zona 2): 3 séries × 3 repetições. Descanso: 60s."
         ],
         [
-            "Saltos de corda em ritmo constante: 3 séries × 30 segundos. Descanso: 30s.",
-            "Corrida de frente e costas em curta distância (3m a 6m): 3 séries × 4 repetições. Descanso: 45s."
+            "Saltos de corda em ritmo acelerado: 3 séries × 45 segundos. Descanso: 30s.",
+            "Deslocamento de cobertura de remate entre cones: 3 séries × 4 repetições. Descanso: 45s."
         ],
         [
-            "Escada de coordenação (entrada e saída rápida a pés juntos): 3 séries × 2 passagens. Descanso: 30s.",
-            "Reação a palmas do treinador para iniciar sprint curto: 3 séries × 4 repetições. Descanso: 45s."
+            "Escada de agilidade (Passos tesoura lateral): 3 séries × 2 passagens. Descanso: 45s.",
+            "Piques curtos com paragem brusca e simulação de toque de dedos: 3 séries × 4 repetições. Descanso: 45s."
         ]
     ];
 
     const strengthVariations = [
         [
-            "Agachamento livre sem peso (sentar e levantar de costas direitas): 3 séries × 10 repetições. Descanso: 45s.",
-            "Prancha abdominal com apoio nos joelhos: 3 séries × 25 segundos. Descanso: 30s.",
-            "Ponte de glúteos no chão: 3 séries × 10 repetições. Descanso: 45s."
+            "Agachamento livre com bola medicinal leve ou saco de areia (2kg): 3 séries × 12 repetições. Descanso: 60s.",
+            "Flexões de braço no chão (completas): 3 séries × 10 repetições. Descanso: 60s.",
+            "Prancha abdominal com toque alternado nos ombros: 3 séries × 30 segundos. Descanso: 45s."
         ],
         [
-            "Afundos curtos estáticos sem peso: 3 séries × 6 repetições por perna. Descanso: 45s.",
-            "Prancha lateral apoiada nos antebraços/joelhos: 3 séries × 20 segundos por lado. Descanso: 30s.",
-            "Elevação dos calcanhares (panturrilhas) no chão: 3 séries × 12 repetições. Descanso: 45s."
+            "Afundos alternados (Lunges) com peso leve: 3 séries × 8 repetições por perna. Descanso: 60s.",
+            "Remada com elástico preso na estrutura da rede (ativação de costas): 3 séries × 12 repetições. Descanso: 45s.",
+            "Elevação pélvica / Hip Thrust no solo com apoio: 3 séries × 12 repetições. Descanso: 60s."
         ],
         [
-            "Agachamento curto com braços à frente: 3 séries × 10 repetições. Descanso: 45s.",
-            "Abdominal em V curto (encolher joelhos ao peito sentado): 3 séries × 8 repetições. Descanso: 45s.",
-            "Extensão de braços inclinada no espaldar ou parede: 3 séries × 8 repetições. Descanso: 45s."
+            "Subida rápida em banco seguro com impulsão (Step-up): 3 séries × 8 repetições por perna. Descanso: 60s.",
+            "Desenvolvimento de ombros com elástico ou peso leve: 3 séries × 10 repetições. Descanso: 60s.",
+            "Stiff com bola medicinal / peso morto romeno leve: 3 séries × 10 repetições. Descanso: 60s."
         ],
         [
-            "Passada larga frontal (lunge) controlada: 3 séries × 6 repetições por perna. Descanso: 45s.",
-            "Prancha frontal com elevação alternada de braço: 3 séries × 20 segundos. Descanso: 30s.",
-            "Ponte de glúteos com subida lenta: 3 séries × 10 repetições. Descanso: 45s."
+            "Agachamento curto explosivo (¼ Squat dinâmico): 3 séries × 8 repetições rápidas. Descanso: 60s.",
+            "Lançamento frontal de bola medicinal contra parede: 3 séries × 6 arremessos. Descanso: 60s.",
+            "Pallof Press com elástico (Anti-rotação): 3 séries × 10 repetições por lado. Descanso: 45s."
         ]
     ];
 
     const ballVariations = [
         [
-            "Minivôlei 2x2 cooperativo: O objetivo é conseguir fazer 4 toques seguidos (recepção, passe e toque/chapa) sem deixar cair.",
-            "Autotoques de dedos e manchetes em duplas com balão ou bola leve."
+            "Treino do Sistema 4x2 - K1 (Receção de Saque): Infiltração obrigatória da distribuidora de trás (Zona 1 para Zona 2/3) + construção de jogada para as pontas (15 min).",
+            "Jogo Coletivo Dirigido 6x6 em Sistema 4x2: Cada ponto iniciado exige a correta ocupação posicional inicial."
         ],
         [
-            "Serviço por baixo para alvo marcado no campo contrário (ex: hula-hop ou colchão no chão).",
-            "Minivôlei 3x3 simplificado com ressalto permitido (bola pode bater uma vez no chão antes de tocar)."
+            "Treino do Sistema 4x2 - K2 (Defesa e Transição): Bloco duplo organizado + Contra-ataque rápido acionando a distribuidora infiltrada (15 min).",
+            "Jogo Reduzido 4x4 com exigência tática de distribuição rápida e posicionamento rigoroso."
         ],
         [
-            "Exercício de 'Lança e Apanha': Receber a bola do colega sempre acima da testa com as mãos em formato de cesto.",
-            "Minivôlei 2x2 com rede baixa ou elástico: Foco em mandar a bola para o campo vizinho com controle."
+            "Sintonia Fina Distribuidora-Atacantes: 15 minutos de repetição de bolas rápidas e meia-altura (chumbadas e fundas) com as duas distribuidoras.",
+            "Simulação de Rotations: Corrigir falhas de posicionamento no momento do serviço (evitar faltas de rotação)."
         ],
         [
-            "Circuito técnico com bola: 1 min de toques de dedos à parede, 1 min de manchetes e 1 min de serviço por baixo.",
-            "Jogo coletivo reduzido 3x3 com contagem de pontos divertida e aplausos a cada boa jogada."
+            "Situações Especiais de Jogo: Sets curtos começando em 15-15 onde as equipas têm de pontuar obrigatoriamente usando o sistema 4x2 treinado (15 min).",
+            "Jogo Livre 6x6 com foco em comunicação verbal constante ('Minha!', 'Fora!', 'Infiltra!')."
         ]
     ];
 
@@ -596,16 +593,16 @@
         let strength = [];
 
         if(i < 8) {
-            phase = "Adaptação Motora & Postural (Iniciação Geral)";
+            phase = "Consolidação das Bases do Sistema 4x2 (Preparatório Geral)";
             strength = strengthVariations[0];
         } else if(i >= 8 && i < 20) {
-            phase = "Coordenação & Fundamentos do Toque (Base Técnica)";
+            phase = "Infiltrações Avançadas & Sincronização K1/K2 (Específico)";
             strength = strengthVariations[1];
         } else if(i >= 20 && i < 38) {
-            phase = "Consolidação da Manchete & Minivôlei (Fase Competitiva Lúdica)";
+            phase = "Fluidez Tática & Fase Competitiva 4x2 (Campeonato)";
             strength = strengthVariations[2];
         } else {
-            phase = "Jogos, Festa do Vôlei & Autonomia (Encerramento)";
+            phase = "Ajustes Finos, Pico de Rendimento & Torneios Finais (Taper)";
             strength = strengthVariations[3];
         }
 
@@ -616,11 +613,11 @@
             date: dateStr,
             title: `Treino #${i+1} (${dateStr})`,
             phase: phase,
-            focus: i % 2 === 0 ? "Postura + Toque de Dedos + Minivôlei 2x2" : "Manchete + Serviço por Baixo + Jogos Reduzidos",
+            focus: i % 2 === 0 ? "Infiltrações 4x2 + Sincronização de Ataque (K1) + Pliometria" : "Bloco e Defesa + Transição K2 + Sistema 4x2 Completo",
             prehab: [
-                "Aquecimento Lúdico de Quadra (Aba 2): 10 a 12 minutos",
-                "Brincadeiras de mobilidade e atenção",
-                "Ativação articular sem pressões"
+                "Aquecimento Dinâmico de Quadra (Aba 2): 10 a 12 minutos",
+                "Mobilidade Articular de Ombros e Tornozelos",
+                "Ativação de Core e Prevenção de Lesões"
             ],
             plyo: plyoVariations[pIdx],
             speed: speedVariations[pIdx],
@@ -641,7 +638,7 @@
     }
 
     function loadStorage() {
-        const saved = localStorage.getItem('fc_academicos_infantis_b_v1');
+        const saved = localStorage.getItem('fc_academicos_infantis_b_avancadas_v1');
         if(saved) {
             const parsed = JSON.parse(saved);
             parsed.forEach((item, idx) => {
@@ -655,7 +652,7 @@
 
     function saveStorage() {
         const toSave = weeksData.map(w => ({ completed: w.completed, notes: w.notes }));
-        localStorage.setItem('fc_academicos_infantis_b_v1', JSON.stringify(toSave));
+        localStorage.setItem('fc_academicos_infantis_b_avancadas_v1', JSON.stringify(toSave));
     }
 
     function init() {
@@ -690,7 +687,7 @@
         fillList('strengthList', w.strength);
         fillList('ballList', w.ball);
 
-        document.getElementById('warmupTitle').textContent = `🏐 Aquecimento Lúdico Específico (${w.date})`;
+        document.getElementById('warmupTitle').textContent = `🏐 Aquecimento Dinâmico Específico (${w.date})`;
         fillList('warmupStep1', w.warmup.s1);
         fillList('warmupStep2', w.warmup.s2);
         fillList('warmupStep3', w.warmup.s3);
@@ -706,7 +703,7 @@
             document.getElementById('checkText').textContent = "Marcar Concluído";
         }
 
-        document.getElementById('notes').value = w.notes || "";
+        document.exitElement ? null : document.getElementById('notes').value = w.notes || "";
     }
 
     function fillList(id, arr) {
