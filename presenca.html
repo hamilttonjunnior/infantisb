@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Lista de Presença: FCA - Juvenis A</title>
+    <title>Lista de Presença: FCA - Infantis B</title>
     
-    <meta property="og:title" content="Lista de Presença: FCA - Juvenis A">
+    <meta property="og:title" content="Lista de Presença: FCA - Infantis B">
     <meta property="og:description" content="Calendário dinâmico e gestão de presenças da época 2026/2027.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hamilttonjunnior.github.io/presencajuvenisa/">
+    <meta property="og:url" content="https://hamilttonjunnior.github.io/presencainfantisb/">
     <style>
         :root {
             --primary: #1e3a8a;
@@ -189,9 +189,8 @@
             <div class="club-logo">
                 <img src="logo.png" alt="Logo FCA">
             </div>
-            <h1>Lista de Presença: FCA - Juvenis A</h1>
+            <h1>Lista de Presença: FCA - Infantis B</h1>
         </div>
-        <div id="loading" style="font-weight: bold; color: var(--warning);">Conectando ao banco...</div>
     </header>
 
     <nav>
@@ -205,7 +204,6 @@
         <div class="form-group">
             <label for="data-chamada"><b>Data do Treino:</b></label>
             <input type="date" id="data-chamada" onchange="loadAttendanceDay()">
-            <span style="font-size: 12px; color: #64748b;">(Ter: 19h30 | Qua: 20h30 | Sex: 20h00)</span>
         </div>
         <div class="table-responsive">
             <table id="table-chamada">
@@ -471,7 +469,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getFirestore, collection, doc, setDoc, getDocs, getDoc, deleteDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    // Configuração atualizada do Firebase do colega
+    // Configuração do Firebase do Infantis B
     const firebaseConfig = {
         apiKey: "AIzaSyCqvRX8CDX7aXxIhwqDD3W_NpwSq-cS0",
         authDomain: "infantisb-580be.firebaseapp.com",
@@ -494,11 +492,9 @@
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('data-chamada').value = today;
 
-        document.getElementById('loading').innerText = "Carregando dados...";
         await loadAthletes();
         await loadEvents();
         await loadAttendanceDay();
-        document.getElementById('loading').style.display = "none";
     });
 
     async function loadAthletes() {
@@ -550,7 +546,6 @@
 
         if (!name) return alert("Por favor, preencha o nome da atleta.");
 
-        document.getElementById('loading').style.display = "block";
         if (id) {
             await setDoc(doc(db, "athletes", id), { name, number, birthdate });
         } else {
@@ -562,7 +557,6 @@
         await loadAthletes();
         await loadAttendanceDay();
         renderCalendar();
-        document.getElementById('loading').style.display = "none";
     };
 
     window.editAthlete = function(id, name, number, birthdate) {
@@ -585,12 +579,10 @@
 
     window.deleteAthlete = async function(id) {
         if(confirm("Deseja mesmo remover esta atleta?")) {
-            document.getElementById('loading').style.display = "block";
             await deleteDoc(doc(db, "athletes", id));
             await loadAthletes();
             await loadAttendanceDay();
             renderCalendar();
-            document.getElementById('loading').style.display = "none";
         }
     };
 
@@ -646,7 +638,6 @@
         const dateStr = document.getElementById('data-chamada').value;
         if (!dateStr) return alert("Selecione uma data válida.");
 
-        document.getElementById('loading').style.display = "block";
         const records = {};
         athletesList.forEach(athlete => {
             const status = document.getElementById(`status-${athlete.id}`).value;
@@ -655,7 +646,6 @@
         });
 
         await setDoc(doc(db, "attendance", dateStr), { records });
-        document.getElementById('loading').style.display = "none";
         alert("Lista de presença salva com sucesso!");
         if(document.getElementById('tab-relatorio').classList.contains('active')) {
             await populateFilterOptions(true);
@@ -683,7 +673,6 @@
 
         if (!title || !date) return alert("Por favor, preencha no mínimo o Título e a Data de Início do evento.");
 
-        document.getElementById('loading').style.display = "block";
         const newDocRef = doc(collection(db, "events"));
         
         const finalEndDate = dateEnd ? dateEnd : date;
@@ -709,7 +698,6 @@
         document.getElementById('event-desc').value = "";
 
         await loadEvents();
-        document.getElementById('loading').style.display = "none";
     };
 
     window.openEventDetails = function(eventId) {
@@ -781,8 +769,6 @@
         const description = document.getElementById('edit-desc').value.trim();
 
         if (!title || !date) return alert("O título e a data de início são obrigatórios.");
-
-        document.getElementById('loading').style.display = "block";
         
         await setDoc(doc(db, "events", id), {
             title,
@@ -797,17 +783,14 @@
 
         closeEventModal();
         await loadEvents();
-        document.getElementById('loading').style.display = "none";
     };
 
     window.triggerDeleteFromModal = async function() {
         if (!currentActiveEvent) return;
         if (confirm(`Deseja mesmo excluir o evento "${currentActiveEvent.title}"?`)) {
-            document.getElementById('loading').style.display = "block";
             await deleteDoc(doc(db, "events", currentActiveEvent.id));
             closeEventModal();
             await loadEvents();
-            document.getElementById('loading').style.display = "none";
         }
     };
 
